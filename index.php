@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
     <!-- الهيدر الرئيسي -->
     <header class="main-header" id="main-navigation-header">
         <div class="logo-container">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/images/logo.png" alt="شعار لارين عباية" class="logo" onerror="this.src='https://placehold.co/200x80/2c1810/d4af37?text=Lareen+Abaya'">
             </a>
         </div>
@@ -41,16 +41,16 @@
 
         <nav class="nav-container">
             <ul class="nav-links" id="navigation-menu-links">
-                <li class="active"><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
-                <li><a href="about.html">عن المحل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-                <li><a href="qr-code.html">رمز QR</a></li>
+                <li class="active"><a href="index.php">الرئيسية</a></li>
+                <li><a href="products.php">المنتجات</a></li>
+                <li><a href="about.php">عن المحل</a></li>
+                <li><a href="contact.php">اتصل بنا</a></li>
+                <li><a href="qr-code.php">رمز QR</a></li>
             </ul>
         </nav>
 
         <div class="header-actions">
-            <a href="admin.html" class="admin-link-btn" id="go-to-admin-btn">
+            <a href="admin.php" class="admin-link-btn" id="go-to-admin-btn">
                 <i class="fas fa-user-cog"></i>
                 <span>لوحة التحكم</span>
             </a>
@@ -67,8 +67,8 @@
                     <h1>حيث تلتقي الفخامة بالأناقة الملكية</h1>
                     <p>عبايات مصممة خصيصاً لتناسب ذوقكِ الرفيع، تجمع بين الاحتشام، الراحة، وأحدث صيحات الموضة الخليجية الراقية.</p>
                     <div class="hero-buttons">
-                        <a href="products.html" class="btn btn-primary">تسوقي الآن <i class="fas fa-shopping-bag"></i></a>
-                        <a href="about.html" class="btn btn-secondary">اكتشفي المحل</a>
+                        <a href="products.php" class="btn btn-primary">تسوقي الآن <i class="fas fa-shopping-bag"></i></a>
+                        <a href="about.php" class="btn btn-secondary">اكتشفي المحل</a>
                     </div>
                 </div>
             </div>
@@ -79,8 +79,8 @@
                     <h1>دقة بالتفاصيل وأرقى الأقمشة الكورية</h1>
                     <p>ننتقي خاماتنا بعناية فائقة لتشعري بالثقة والتميز في كل خطواتك. أسعارنا منافسة وجودتنا مضمونة.</p>
                     <div class="hero-buttons">
-                        <a href="products.html" class="btn btn-primary">رؤية العبايات <i class="fas fa-arrow-left"></i></a>
-                        <a href="contact.html" class="btn btn-secondary">تواصل معنا</a>
+                        <a href="products.php" class="btn btn-primary">رؤية العبايات <i class="fas fa-arrow-left"></i></a>
+                        <a href="contact.php" class="btn btn-secondary">تواصل معنا</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
-            <a href="products.html" class="btn btn-primary" style="padding: 15px 40px;">مشاهدة كل المنتجات <i class="fas fa-arrow-left"></i></a>
+            <a href="products.php" class="btn btn-primary" style="padding: 15px 40px;">مشاهدة كل المنتجات <i class="fas fa-arrow-left"></i></a>
         </div>
     </section>
 
@@ -159,11 +159,11 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="products.html">المنتجات والعبايات</a></li>
-                    <li><a href="about.html">عن المحل وقصتنا</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                    <li><a href="qr-code.html">رمز الـ QR الخاص بنا</a></li>
+                    <li><a href="index.php">الرئيسية</a></li>
+                    <li><a href="products.php">المنتجات والعبايات</a></li>
+                    <li><a href="about.php">عن المحل وقصتنا</a></li>
+                    <li><a href="contact.php">تواصل معنا</a></li>
+                    <li><a href="qr-code.php">رمز الـ QR الخاص بنا</a></li>
                 </ul>
             </div>
             

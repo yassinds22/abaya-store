@@ -1,4 +1,4 @@
-/* main.js - الوظائف المشتركة والتهيئة العامة لموقع لارين عباية */
+﻿/* main.js - الوظائف المشتركة والتهيئة العامة لموقع لارين عباية */
 
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. تهيئة المنتجات في التخزين المحلي كخطوة أولى
@@ -65,7 +65,7 @@ function highlightActiveNavLink() {
         const link = item.querySelector('a');
         if (link) {
             const href = link.getAttribute('href');
-            if (page === href || (page === '' && href === 'index.html')) {
+            if (page === href || (page === '' && href === 'index.php')) {
                 item.classList.add('active');
             }
         }
@@ -104,12 +104,12 @@ function initializePageSpecificLogic() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
     
-    if (page === 'index.html' || page === '') {
+    if (page === 'index.php' || page === '') {
         renderHomePageProducts();
         setupHeroSlider();
-    } else if (page === 'products.html') {
+    } else if (page === 'products.php') {
         initProductsPage();
-    } else if (page === 'product-detail.html') {
+    } else if (page === 'product-detail.php') {
         initProductDetailPage();
     }
 }

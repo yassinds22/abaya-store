@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
     <!-- الهيدر الرئيسي الموحد -->
     <header class="main-header" id="main-navigation-header">
         <div class="logo-container">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/images/logo.png" alt="شعار لارين عباية" class="logo" onerror="this.src='https://placehold.co/200x80/2c1810/d4af37?text=Lareen+Abaya'">
             </a>
         </div>
@@ -43,16 +43,16 @@
 
         <nav class="nav-container">
             <ul class="nav-links" id="navigation-menu-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
-                <li><a href="about.html">عن المحل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-                <li class="active"><a href="qr-code.html">رمز QR</a></li>
+                <li><a href="index.php">الرئيسية</a></li>
+                <li><a href="products.php">المنتجات</a></li>
+                <li><a href="about.php">عن المحل</a></li>
+                <li><a href="contact.php">اتصل بنا</a></li>
+                <li class="active"><a href="qr-code.php">رمز QR</a></li>
             </ul>
         </nav>
 
         <div class="header-actions">
-            <a href="admin.html" class="admin-link-btn" id="go-to-admin-btn">
+            <a href="admin.php" class="admin-link-btn" id="go-to-admin-btn">
                 <i class="fas fa-user-cog"></i>
                 <span>لوحة التحكم</span>
             </a>
@@ -103,11 +103,11 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="products.html">المنتجات والعبايات</a></li>
-                    <li><a href="about.html">عن المحل وقصتنا</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                    <li><a href="qr-code.html">رمز الـ QR الخاص بنا</a></li>
+                    <li><a href="index.php">الرئيسية</a></li>
+                    <li><a href="products.php">المنتجات والعبايات</a></li>
+                    <li><a href="about.php">عن المحل وقصتنا</a></li>
+                    <li><a href="contact.php">تواصل معنا</a></li>
+                    <li><a href="qr-code.php">رمز الـ QR الخاص بنا</a></li>
                 </ul>
             </div>
             

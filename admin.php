@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
                 <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-sign-in-alt"></i> دخول</button>
             </form>
             <div style="margin-top: 20px;">
-                <a href="index.html" style="color: var(--color-gold); font-size: 0.9rem; font-weight: bold;"><i class="fas fa-arrow-right"></i> العودة للموقع الرئيسي</a>
+                <a href="index.php" style="color: var(--color-gold); font-size: 0.9rem; font-weight: bold;"><i class="fas fa-arrow-right"></i> العودة للموقع الرئيسي</a>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
                 <h1>لوحة التحكم <span>إدارة متجر لارين عباية</span></h1>
             </div>
             <div style="display: flex; gap: 15px;">
-                <a href="index.html" class="btn btn-secondary" style="border-color: var(--color-dark-brown); color: var(--color-dark-brown); padding: 8px 20px; font-size: 0.9rem;"><i class="fas fa-eye"></i> معاينة الموقع</a>
+                <a href="index.php" class="btn btn-secondary" style="border-color: var(--color-dark-brown); color: var(--color-dark-brown); padding: 8px 20px; font-size: 0.9rem;"><i class="fas fa-eye"></i> معاينة الموقع</a>
                 <button id="logout-btn" class="btn btn-primary" style="background-color: var(--color-wine); color: var(--color-white); padding: 8px 20px; font-size: 0.9rem;"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</button>
             </div>
         </header>

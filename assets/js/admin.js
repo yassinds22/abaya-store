@@ -1,4 +1,4 @@
-/* admin.js - لوحة تحكم وإدارة المنتجات لمتجر لارين عباية */
+﻿/* admin.js - لوحة تحكم وإدارة المنتجات لمتجر لارين عباية */
 
 const ADMIN_PASSWORD = "lareen2026";
 let editingProductId = null;
