@@ -1,0 +1,151 @@
+/* animations.css - تأثيرات الحركة البصرية لموقع لارين عباية */
+
+/* تأثير الظهور الأنيق للموقع */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-element {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* تأثير الظهور من الأعلى */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down-element {
+    animation: slideDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* حركة زر الواتساب العائم (اهتزاز خفيف متكرر) */
+@keyframes whatsappShake {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10%, 30% {
+        transform: scale(0.9) rotate(-3deg);
+    }
+    20%, 40% {
+        transform: scale(1.1) rotate(3deg);
+    }
+    50% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+    60% {
+        transform: scale(1) rotate(3deg);
+    }
+    70% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.whatsapp-float-btn {
+    animation: whatsappFloat 3s ease-in-out infinite;
+}
+
+.whatsapp-float-btn:hover {
+    animation: whatsappShake 1s ease-in-out infinite;
+}
+
+@keyframes whatsappFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* تأثير التمرير على كروت المنتجات */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(44, 24, 16, 0.15);
+}
+
+/* تأثير التمرير على الأزرار الفاخرة */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+/* تأثير تحميل الصور التدريجي */
+.lazy-image {
+    transition: filter 0.3s blur;
+}
+
+.lazy-image.loaded {
+    filter: blur(0);
+}
+
+/* حركة السلايدر التلقائية */
+@keyframes slideFade {
+    0%, 100% {
+        opacity: 0;
+    }
+    8%, 92% {
+        opacity: 1;
+    }
+}
+
+/* تأثير تحريك خلفية البانر */
+@keyframes zoomBg {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* تأثير تأخير الظهور للعناصر المتعددة */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

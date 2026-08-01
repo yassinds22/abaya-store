@@ -1,0 +1,148 @@
+/* responsive.css - ملاءمة التصميم مع جميع الشاشات */
+
+/* للأجهزة اللوحية (أصغر من 992px) */
+@media (max-width: 992px) {
+    :root {
+        --header-height: 70px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-dark-brown);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.25);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li a {
+        color: var(--color-white);
+        font-size: 1.2rem;
+    }
+    
+    .menu-toggle {
+        display: flex !important;
+        color: var(--color-gold);
+    }
+    
+    .hero-slider {
+        height: 450px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .product-detail-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .product-gallery {
+        max-height: 400px;
+    }
+}
+
+/* للهواتف الذكية (أصغر من 576px) */
+@media (max-width: 576px) {
+    .top-bar-info {
+        display: none;
+    }
+    
+    .top-bar {
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    
+    .hero-slider {
+        height: 350px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .payment-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-float-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .quick-contact-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .qr-container {
+        padding: 20px;
+    }
+    
+    #qrcode canvas, #qrcode img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+}
