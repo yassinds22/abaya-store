@@ -1,4 +1,4 @@
-4/* products.js - إدارة جلب وعرض وتصفية المنتجات في لارين عباية */
+/* products.js - إدارة جلب وعرض وتصفية المنتجات في لارين عباية */
 
 // مفتاح التخزين المحلي للمنتجات
 const PRODUCTS_STORAGE_KEY = "lareen_abaya_products";
@@ -258,8 +258,8 @@ async function getProducts() {
     
     if (localProducts) {
         const parsed = JSON.parse(localProducts);
-        // تحديث التخزين إذا كانت المنتجات قديمة (أقل من 27 منتج أو تشير إلى صور مؤقتة قديمة)
-        if (parsed.length < 27 || (parsed.length > 0 && parsed[0].image.includes('images/products/product1.jpg'))) {
+        // تحديث التخزين إذا كانت المنتجات قديمة (أقل من 27 منتج أو تشير إلى صور مؤقتة قديمة أو مسارات بدون assets/)
+        if (parsed.length < 27 || (parsed.length > 0 && parsed[0].image.includes('images/products/product1.jpg')) || (parsed.length > 0 && !parsed[0].image.startsWith('assets/'))) {
             localStorage.removeItem(PRODUCTS_STORAGE_KEY);
         } else {
             return parsed;
@@ -292,13 +292,13 @@ function createProductCardHTML(product) {
     if (product.category === 'الأكثر طلباً') {
         badgeHTML = `<span class="product-badge">الأكثر مبيعاً 🔥</span>`;
     } else if (product.category === 'آخر الوافدين') {
-        badgeHTML = `<span class="product-badge" style="background-color: var(--color-gold)">جديد ✨</span>`;
+        badgeHTML = `<span class="product-badge" style="background: linear-gradient(135deg, #b8860b, var(--color-gold)); color: var(--color-dark-brown);">جديد ✨</span>`;
     }
 
     return `
         <div class="product-card fade-in-element">
             ${badgeHTML}
-            <a href="product-detail.html?id=${product.id}">
+            <a href="product-detail.html?id=${product.id}" style="display:block;">
                 <div class="product-card-img-wrapper">
                     <img src="${product.image}" alt="${product.name}" class="product-card-img" onerror="this.src='https://picsum.photos/400/530?random=${product.id}'">
                 </div>
@@ -309,13 +309,17 @@ function createProductCardHTML(product) {
                 </a>
                 <p class="product-card-desc">${product.description}</p>
                 <div class="product-card-footer">
-                    <div class="product-card-price">${formattedPrice} <span>ريال</span></div>
+                    <div class="product-card-price">
+                        <span class="price-amount">${formattedPrice}</span>
+                        <span class="price-currency">ريال يمني</span>
+                    </div>
                 </div>
-                <a href="product-detail.html?id=${product.id}" class="btn btn-primary" style="padding: 10px; font-size: 0.9rem;">عرض التفاصيل الطلب</a>
+                <a href="product-detail.html?id=${product.id}" class="btn btn-primary">طلب العباية</a>
             </div>
         </div>
     `;
 }
+
 
 /**
  * عرض المنتجات في الصفحة الرئيسية (آخر الوافدين والأكثر طلباً)
