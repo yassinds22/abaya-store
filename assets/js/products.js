@@ -1,4 +1,4 @@
-﻿/* products.js - إدارة جلب وعرض وتصفية المنتجات في لارين عباية */
+/* products.js - إدارة جلب وعرض وتصفية المنتجات في لارين عباية */
 
 // مفتاح التخزين المحلي للمنتجات
 const PRODUCTS_STORAGE_KEY = "lareen_abaya_products";
@@ -251,22 +251,29 @@ const DEFAULT_PRODUCTS = [
 ];
 
 /**
- * جلب جميع المنتجات من LocalStorage أو من المصفوفة الافتراضية
+ * جلب جميع المنتجات من السيرفر عبر API أو التخزين المحلي كـ Fallback
  */
 async function getProducts() {
+    try {
+        const response = await fetch('api/products.php');
+        if (response.ok) {
+            const apiProducts = await response.json();
+            if (Array.isArray(apiProducts) && apiProducts.length > 0) {
+                return apiProducts;
+            }
+        }
+    } catch (e) {
+        console.warn("جاري التراجع للتخزين المحلي نظراً لعدم توفر API السيرفر حالياً");
+    }
+
     let localProducts = localStorage.getItem(PRODUCTS_STORAGE_KEY);
-    
     if (localProducts) {
         const parsed = JSON.parse(localProducts);
-        // تحديث التخزين إذا كانت المنتجات قديمة (أقل من 27 منتج أو تشير إلى صور مؤقتة قديمة أو مسارات بدون assets/)
-        if (parsed.length < 27 || (parsed.length > 0 && parsed[0].image.includes('images/products/product1.jpg')) || (parsed.length > 0 && !parsed[0].image.startsWith('assets/'))) {
-            localStorage.removeItem(PRODUCTS_STORAGE_KEY);
-        } else {
+        if (parsed.length >= 27 && parsed[0].image && parsed[0].image.startsWith('assets/')) {
             return parsed;
         }
     }
     
-    // حفظ المنتجات الافتراضية المدمجة في التخزين المحلي
     localStorage.setItem(PRODUCTS_STORAGE_KEY, JSON.stringify(DEFAULT_PRODUCTS));
     return DEFAULT_PRODUCTS;
 }

@@ -1,10 +1,12 @@
-/* animations.css - تأثيرات الحركة البصرية لموقع لارين عباية */
+/* animations.css - تأثيرات الحركة البصرية لموقع لارين عباية 🌸 */
 
-/* تأثير الظهور الأنيق للموقع */
+/* ========================================
+   تأثير الظهور الأنيق للموقع
+======================================== */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(22px);
     }
     to {
         opacity: 1;
@@ -13,14 +15,14 @@
 }
 
 .fade-in-element {
-    animation: fadeIn 0.8s ease forwards;
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* تأثير الظهور من الأعلى */
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-40px);
     }
     to {
         opacity: 1;
@@ -32,7 +34,48 @@
     animation: slideDown 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* حركة زر الواتساب العائم (اهتزاز خفيف متكرر) */
+/* ========================================
+   تأثير Shimmer الوردي على العناصر
+======================================== */
+@keyframes shimmerPink {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+.shimmer-pink {
+    background: linear-gradient(
+        90deg,
+        rgba(181, 67, 106, 0.06) 0%,
+        rgba(196, 136, 154, 0.18) 50%,
+        rgba(181, 67, 106, 0.06) 100%
+    );
+    background-size: 800px 100%;
+    animation: shimmerPink 2.2s infinite linear;
+}
+
+/* ========================================
+   تأثير النبض الوردي (Pulse Glow)
+======================================== */
+@keyframes pinkPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(181, 67, 106, 0.35);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(181, 67, 106, 0);
+    }
+}
+
+.pulse-pink {
+    animation: pinkPulse 2.5s ease-in-out infinite;
+}
+
+/* ========================================
+   حركة زر الواتساب العائم
+======================================== */
 @keyframes whatsappShake {
     0%, 100% {
         transform: scale(1);
@@ -71,21 +114,27 @@
     }
 }
 
-/* تأثير التمرير على كروت المنتجات */
+/* ========================================
+   تأثير بطاقات المنتجات
+======================================== */
 .product-card {
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(44, 24, 16, 0.15);
+    box-shadow: 0 20px 45px rgba(181, 67, 106, 0.18);
 }
 
-/* تأثير التمرير على الأزرار الفاخرة */
+/* ========================================
+   تأثير الأزرار الرئيسية
+======================================== */
 .btn-primary {
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
 }
 
 .btn-primary::after {
@@ -98,28 +147,31 @@
     background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
+    pointer-events: none;
 }
 
 .btn-primary:hover::after {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.btn-primary:hover {
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-    transform: translateY(-2px);
-}
-
-/* تأثير تحميل الصور التدريجي */
+/* ========================================
+   تأثير تحميل الصور التدريجي
+======================================== */
 .lazy-image {
-    transition: filter 0.3s blur;
+    transition: filter 0.4s ease, opacity 0.4s ease;
+    filter: blur(6px);
+    opacity: 0.7;
 }
 
 .lazy-image.loaded {
     filter: blur(0);
+    opacity: 1;
 }
 
-/* حركة السلايدر التلقائية */
+/* ========================================
+   حركة السلايدر التلقائية
+======================================== */
 @keyframes slideFade {
     0%, 100% {
         opacity: 0;
@@ -142,10 +194,50 @@
     }
 }
 
-/* تأثير تأخير الظهور للعناصر المتعددة */
+/* ========================================
+   تأثير ظهور بطاقة بنمط وردي
+======================================== */
+@keyframes cardRise {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-rise {
+    animation: cardRise 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ========================================
+   تأثير الخط الوردي المتحرك (تزيين)
+======================================== */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+    background: linear-gradient(270deg, #B5436A, #7B3B7A, #C4889A, #B5436A);
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   تأخيرات الظهور للعناصر المتعددة
+======================================== */
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
 .delay-5 { animation-delay: 0.5s; }
 .delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
