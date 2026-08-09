@@ -4,10 +4,15 @@
  * إدارة الاتصال بقاعدة بيانات MySQL عبر PDO
  */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'lareen_abaya');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// تحميل ملف إعدادات الاستضافة المحلية/الإنتاجية إن وجد
+if (file_exists(__DIR__ . '/config.local.php')) {
+    require_once __DIR__ . '/config.local.php';
+}
+
+if (!defined('DB_HOST')) define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+if (!defined('DB_NAME')) define('DB_NAME', getenv('DB_NAME') ?: 'lareen_abaya');
+if (!defined('DB_USER')) define('DB_USER', getenv('DB_USER') ?: 'root');
+if (!defined('DB_PASS')) define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
 
 /**
  * الحصول على كائن اتصال PDO متهيئ ومحمي

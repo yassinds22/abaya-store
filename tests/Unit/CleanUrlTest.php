@@ -18,7 +18,7 @@ class CleanUrlTest extends TestCase
 
         $content = file_get_contents($htaccessPath);
         $this->assertStringContains('RewriteEngine On', $content, '.htaccess must enable RewriteEngine');
-        $this->assertStringContains('RewriteBase /lareen-abaya/', $content, '.htaccess must set RewriteBase');
+        $this->assertStringContains('RewriteCond %{REQUEST_FILENAME}.php -f', $content, '.htaccess must rewrite clean URLs to .php files');
     }
 
     /**
