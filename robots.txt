@@ -1,0 +1,30 @@
+# ======================================================
+# لارين عباية (Lareen Abaya) - Robots.txt (SEO & GEO)
+# توجيه محركات البحث التقليدية والذكاء الاصطناعي التوليدي
+# ======================================================
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /database/
+Disallow: /includes/
+
+# السماح لعناكب الذكاء الاصطناعي التوليدي (GEO optimization for ChatGPT, Gemini, Perplexity)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# خريطة الموقع الرئيسية
+Sitemap: http://localhost/lareen-abaya/sitemap.xml

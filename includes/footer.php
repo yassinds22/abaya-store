@@ -17,11 +17,11 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="index.php">الرئيسية</a></li>
-                    <li><a href="products.php">المنتجات والعبايات</a></li>
-                    <li><a href="about.php">عن المحل وقصتنا</a></li>
-                    <li><a href="contact.php">تواصل معنا</a></li>
-                    <li><a href="qr-code.php">رمز الـ QR الخاص بنا</a></li>
+                    <li><a href="./">الرئيسية</a></li>
+                    <li><a href="products">المنتجات والعبايات</a></li>
+                    <li><a href="about">عن المحل وقصتنا</a></li>
+                    <li><a href="contact">تواصل معنا</a></li>
+                    <li><a href="qr-code">رمز الـ QR الخاص بنا</a></li>
                 </ul>
             </div>
 

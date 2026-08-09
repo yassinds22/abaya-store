@@ -1,0 +1,22 @@
+# ======================================================
+# لارين عباية (Lareen Abaya) - Clean URLs (.htaccess)
+# إزالة الملحق .php وتوفير روابط نظيفة ومفهومة لمحركات البحث (SEO)
+# ======================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /lareen-abaya/
+
+    # 1. تحويل الطلب الذي يحتوي على .php صراحة إلى الرابط النظيف (HTTP 301 Redirect)
+    RewriteCond %{THE_REQUEST} \s/lareen-abaya/([^/]+)\.php[\s?] [NC]
+    RewriteRule ^([^/]+)\.php$ $1 [R=301,L]
+
+    # 2. السماح للملفات والمجلدات الحقيقية (CSS, JS, Images, etc) بالتحميل مباشرة
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 3. تحويل أي مسار بدون .php إلى ملف ה-PHP المقابل إذا كان موجوداً
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+</IfModule>

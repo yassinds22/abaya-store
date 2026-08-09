@@ -13,11 +13,15 @@ require_once __DIR__ . '/TestCase.php';
 require_once __DIR__ . '/Unit/DBTest.php';
 require_once __DIR__ . '/Unit/ProductTest.php';
 require_once __DIR__ . '/Unit/IconAssetTest.php';
+require_once __DIR__ . '/Unit/CleanUrlTest.php';
+require_once __DIR__ . '/Unit/SeoGeoTest.php';
 
 $testClasses = [
     'DBTest',
     'ProductTest',
     'IconAssetTest',
+    'CleanUrlTest',
+    'SeoGeoTest',
 ];
 
 $totalPassed = 0;

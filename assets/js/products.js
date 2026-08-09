@@ -305,13 +305,13 @@ function createProductCardHTML(product) {
     return `
         <div class="product-card fade-in-element">
             ${badgeHTML}
-            <a href="product-detail.php?id=${product.id}" style="display:block;">
+            <a href="product-detail?id=${product.id}" style="display:block;">
                 <div class="product-card-img-wrapper">
                     <img src="${product.image}" alt="${product.name}" class="product-card-img" onerror="this.src='https://picsum.photos/400/530?random=${product.id}'">
                 </div>
             </a>
             <div class="product-card-info">
-                <a href="product-detail.php?id=${product.id}">
+                <a href="product-detail?id=${product.id}">
                     <h3 class="product-card-title">${product.name}</h3>
                 </a>
                 <p class="product-card-desc">${product.description}</p>
@@ -321,7 +321,7 @@ function createProductCardHTML(product) {
                         <span class="price-currency">ريال يمني</span>
                     </div>
                 </div>
-                <a href="product-detail.php?id=${product.id}" class="btn btn-primary">طلب العباية</a>
+                <a href="product-detail?id=${product.id}" class="btn btn-primary">طلب العباية</a>
             </div>
         </div>
     `;
@@ -442,7 +442,7 @@ async function initProductDetailPage() {
         document.querySelector('.section').innerHTML = `
             <div style="text-align: center; padding: 100px 20px;">
                 <h2 style="margin-bottom: 20px;">عذراً، هذا المنتج غير موجود.</h2>
-                <a href="products.php" class="btn btn-primary">العودة لصفحة المنتجات</a>
+                <a href="products" class="btn btn-primary">العودة لصفحة المنتجات</a>
             </div>
         `;
         return;

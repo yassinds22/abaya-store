@@ -36,6 +36,83 @@ function navClass(string $page, string $current): string {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
+
+    <!-- إعدادات SEO الشاملة ومحركات الذكاء الاصطناعي (SEO & GEO & Local SEO) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="<?= BASE_URL . ($currentPage === 'index' ? '' : $currentPage) ?>">
+
+    <!-- Geo Local SEO (استهداف البحث المحلي في صنعاء) -->
+    <meta name="geo.region" content="YE-SN">
+    <meta name="geo.placename" content="صنعاء">
+    <meta name="geo.position" content="15.3278;44.2081">
+    <meta name="ICBM" content="15.3278, 44.2081">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= BASE_URL ?>">
+    <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($pageDescription) ?>">
+    <meta property="og:image" content="<?= BASE_URL ?>assets/images/hero-banner.jpg">
+    <meta property="og:locale" content="ar_YE">
+    <meta property="og:site_name" content="لارين عباية - Lareen Abaya">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription) ?>">
+    <meta name="twitter:image" content="<?= BASE_URL ?>assets/images/hero-banner.jpg">
+
+    <!-- Schema.org JSON-LD Structured Data (لـ GEO & Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "@id": "<?= BASE_URL ?>#store",
+        "name": "لارين عباية | Lareen Abaya",
+        "alternateName": ["Lareen Abaya", "متجر لارين عباية صنعاء"],
+        "url": "<?= BASE_URL ?>",
+        "logo": "<?= BASE_URL ?>assets/images/logo.png",
+        "image": "<?= BASE_URL ?>assets/images/hero-banner.jpg",
+        "description": "علامة تجارية يمنية راقية متخصصة في تصميم وبيع العبايات الخليجية والملكية، التطريز اليدوي والأقمشة الفاخرة في صنعاء، سوق شميلة.",
+        "telephone": "+967773185534",
+        "priceRange": "$$",
+        "currenciesAccepted": "YER",
+        "paymentAccepted": "Cash, Bank Transfer, Mobile Wallet",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "سوق شميلة - شارع 2 - جوار العلوي للعبايات",
+            "addressLocality": "صنعاء",
+            "addressRegion": "أمانة العاصمة",
+            "addressCountry": "YE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 15.3278,
+            "longitude": 44.2081
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+                "opens": "09:00",
+                "closes": "21:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Friday"],
+                "opens": "16:00",
+                "closes": "21:30"
+            }
+        ],
+        "sameAs": [
+            "https://instagram.com",
+            "https://facebook.com",
+            "https://tiktok.com",
+            "https://snapchat.com"
+        ]
+    }
+    </script>
+
     <!-- تسريع تحميل خطوط Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +142,7 @@ function navClass(string $page, string $current): string {
     <!-- الهيدر الرئيسي الموحد -->
     <header class="main-header" id="main-navigation-header">
         <div class="logo-container">
-            <a href="<?= BASE_URL ?>index.php">
+            <a href="<?= BASE_URL ?>">
                 <img id="site-header-logo" src="<?= BASE_URL ?>assets/images/logo.png" alt="شعار لارين عباية" class="logo"
                      onerror="this.src='https://placehold.co/200x80/0b4f3a/c5a059?text=Lareen+Abaya'">
             </a>
@@ -77,11 +154,11 @@ function navClass(string $page, string $current): string {
 
         <nav class="nav-container">
             <ul class="nav-links" id="navigation-menu-links">
-                <li<?= navClass('index',    $currentPage) ?>><a href="<?= BASE_URL ?>index.php">الرئيسية</a></li>
-                <li<?= navClass('products', $currentPage) ?>><a href="<?= BASE_URL ?>products.php">المنتجات</a></li>
-                <li<?= navClass('about',    $currentPage) ?>><a href="<?= BASE_URL ?>about.php">عن المحل</a></li>
-                <li<?= navClass('contact',  $currentPage) ?>><a href="<?= BASE_URL ?>contact.php">اتصل بنا</a></li>
-                <li<?= navClass('qr-code',  $currentPage) ?>><a href="<?= BASE_URL ?>qr-code.php">رمز QR</a></li>
+                <li<?= navClass('index',    $currentPage) ?>><a href="<?= BASE_URL ?>">الرئيسية</a></li>
+                <li<?= navClass('products', $currentPage) ?>><a href="<?= BASE_URL ?>products">المنتجات</a></li>
+                <li<?= navClass('about',    $currentPage) ?>><a href="<?= BASE_URL ?>about">عن المحل</a></li>
+                <li<?= navClass('contact',  $currentPage) ?>><a href="<?= BASE_URL ?>contact">اتصل بنا</a></li>
+                <li<?= navClass('qr-code',  $currentPage) ?>><a href="<?= BASE_URL ?>qr-code">رمز QR</a></li>
             </ul>
         </nav>
 
