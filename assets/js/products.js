@@ -299,7 +299,7 @@ function createProductCardHTML(product) {
     if (product.category === 'الأكثر طلباً') {
         badgeHTML = `<span class="product-badge">الأكثر مبيعاً 🔥</span>`;
     } else if (product.category === 'آخر الوافدين') {
-        badgeHTML = `<span class="product-badge" style="background: linear-gradient(135deg, #b8860b, var(--color-gold)); color: var(--color-dark-brown);">جديد ✨</span>`;
+        badgeHTML = `<span class="product-badge" style="background: linear-gradient(135deg, #0B4F3A, var(--color-gold)); color: #FFFFFF;">جديد ✨</span>`;
     }
 
     return `

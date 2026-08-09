@@ -1,6 +1,13 @@
-/* whatsapp.js - إدارة اتصالات وطلبات واتساب لمتجر لارين عباية */
+let WHATSAPP_NUMBER = "967773185534";
 
-const WHATSAPP_NUMBER = "967773185534";
+/**
+ * تحديث رقم الواتساب الموحد ديناميكياً من الإعدادات
+ */
+function setWhatsAppNumber(number) {
+    if (number && number.trim()) {
+        WHATSAPP_NUMBER = number.trim().replace(/[^0-9]/g, '');
+    }
+}
 
 /**
  * إرسال طلب شراء عباية عبر الواتساب برسالة منسقة

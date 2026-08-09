@@ -28,11 +28,11 @@ $pageDescription = 'لوحة التحكم لإدارة منتجات وأقسام
                 extend: {
                     fontFamily: { cairo: ['Cairo', 'sans-serif'] },
                     colors: {
-                        gold:       { DEFAULT: '#D4AF37', light: '#F4E8C1', hover: '#C5A028' },
-                        brown:      { DEFAULT: '#2C1810', light: '#3D271D', muted: '#8C7E74' },
-                        wine:       { DEFAULT: '#5C1D16', light: '#8B2E25' },
-                        beige:      { DEFAULT: '#F5F0EB' },
-                        'light-bg': '#FDFBF7',
+                        gold:       { DEFAULT: '#C5A059', light: '#F9F5EC', hover: '#B08B46' },
+                        brown:      { DEFAULT: '#0C1814', light: '#152922', muted: '#4A6056' },
+                        wine:       { DEFAULT: '#0B4F3A', light: '#1B362B' },
+                        beige:      { DEFAULT: '#E6F2ED' },
+                        'light-bg': '#F7F9F8',
                     },
                     animation: {
                         'fade-in':    'fadeIn .4s ease forwards',
@@ -51,18 +51,18 @@ $pageDescription = 'لوحة التحكم لإدارة منتجات وأقسام
 
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .nav-link.active { background: linear-gradient(135deg, #D4AF37, #C5A028); color: #2C1810 !important; }
+        .nav-link.active { background: linear-gradient(135deg, #C5A059, #B08B46); color: #0C1814 !important; }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F5F0EB; }
-        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #E6F2ED; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 3px; }
         .toast { transform: translateX(120%); transition: transform .4s cubic-bezier(.4,0,.2,1); }
         .toast.show { transform: translateX(0); }
         .img-preview-btn:hover img { transform: scale(1.06); }
-        .tbl-row:hover { background-color: #F5F0EB; }
+        .tbl-row:hover { background-color: #E6F2ED; }
         .stat-card { position: relative; }
         .stat-card::before {
             content: ''; position: absolute; inset: 0; border-radius: 16px; padding: 1.5px;
-            background: linear-gradient(135deg, #D4AF37 0%, transparent 60%);
+            background: linear-gradient(135deg, #C5A059 0%, transparent 60%);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor; mask-composite: exclude;
         }
@@ -157,6 +157,15 @@ $pageDescription = 'لوحة التحكم لإدارة منتجات وأقسام
             <a href="#" onclick="showSection('models')" id="nav-models" class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-white/70 hover:bg-white/10 hover:text-white">
                 <i class="fas fa-cubes w-5 text-center"></i> <span>إدارة الموديلات</span>
                 <span id="nav-mod-count" class="mr-auto bg-white/10 text-white text-xs rounded-full px-2 py-0.5">0</span>
+            </a>
+
+            <a href="#" onclick="showSection('testimonials')" id="nav-testimonials" class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-white/70 hover:bg-white/10 hover:text-white">
+                <i class="fas fa-comment-dots w-5 text-center"></i> <span>آراء العملاء</span>
+                <span id="nav-testi-count" class="mr-auto bg-white/10 text-white text-xs rounded-full px-2 py-0.5">0</span>
+            </a>
+
+            <a href="#" onclick="showSection('settings')" id="nav-settings" class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-white/70 hover:bg-white/10 hover:text-white">
+                <i class="fas fa-sliders w-5 text-center"></i> <span>إعدادات المتجر والشعار</span>
             </a>
 
             <a href="#" onclick="showSection('add')" id="nav-add" class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all text-white/70 hover:bg-white/10 hover:text-white">
@@ -271,6 +280,7 @@ $pageDescription = 'لوحة التحكم لإدارة منتجات وأقسام
                     <div class="space-y-2">
                         <button onclick="showSection('categories')" class="w-full flex items-center gap-3 p-3 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-100 transition-all text-sm font-semibold text-brown"><i class="fas fa-layer-group text-blue-500"></i> إدارة الأقسام (Category CRUD)</button>
                         <button onclick="showSection('models')" class="w-full flex items-center gap-3 p-3 rounded-xl bg-purple-50 hover:bg-purple-100 border border-purple-100 transition-all text-sm font-semibold text-brown"><i class="fas fa-cubes text-purple-500"></i> إدارة الموديلات (Model CRUD)</button>
+                        <button onclick="showSection('testimonials')" class="w-full flex items-center gap-3 p-3 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-100 transition-all text-sm font-semibold text-brown"><i class="fas fa-comment-dots text-amber-600"></i> إدارة آراء العملاء (Testimonials CRUD)</button>
                         <button onclick="showSection('add')" class="w-full flex items-center gap-3 p-3 rounded-xl bg-gold/5 hover:bg-gold/15 border border-gold/20 transition-all text-sm font-semibold text-brown"><i class="fas fa-plus-circle text-gold"></i> إضافة عباية جديدة</button>
                     </div>
                 </div>
@@ -338,6 +348,12 @@ $pageDescription = 'لوحة التحكم لإدارة منتجات وأقسام
 
         <!-- Section: Models (Model CRUD Component) -->
         <?php require_once __DIR__ . '/models/index.php'; ?>
+
+        <!-- Section: Testimonials (Testimonials CRUD Component) -->
+        <?php require_once __DIR__ . '/testimonials/index.php'; ?>
+
+        <!-- Section: Site Settings (Dynamic Logo & Social Media Links Component) -->
+        <?php require_once __DIR__ . '/settings/index.php'; ?>
 
         <!-- Add / Edit Product Form Section -->
         <section id="section-add" class="hidden flex-1 p-6 animate-fade-in">
@@ -448,9 +464,10 @@ let uploadedImageBase64 = "";
 let deleteTargetId     = null;
 let deleteTargetType   = 'product'; // 'product', 'category', 'model'
 
-let allProducts    = [];
-let categoriesList = [];
-let modelsList     = [];
+let allProducts      = [];
+let categoriesList   = [];
+let modelsList       = [];
+let testimonialsList = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
     setupLoginForm();
@@ -544,7 +561,7 @@ async function handleLogout() {
 }
 
 async function initDashboard() {
-    await Promise.all([loadCategoriesAndModels(), fetchProductsFromAPI()]);
+    await Promise.all([loadCategoriesAndModels(), loadTestimonials(), loadSiteSettings(), fetchProductsFromAPI()]);
     setupImageUpload();
     setupFormSubmit();
     setupTableFilters();
@@ -632,7 +649,7 @@ async function fetchProductsFromAPI() {
 async function refreshData() {
     const btn = document.getElementById('refresh-btn');
     btn.querySelector('i').classList.add('animate-spin');
-    await Promise.all([loadCategoriesAndModels(), fetchProductsFromAPI()]);
+    await Promise.all([loadCategoriesAndModels(), loadTestimonials(), fetchProductsFromAPI()]);
     renderCurrentSection();
     setTimeout(() => btn.querySelector('i').classList.remove('animate-spin'), 600);
     showToast('تم تحديث البيانات من السيرفر ✓', 'success');
@@ -661,6 +678,8 @@ function showSection(name) {
     const labels = {
         overview: 'نظرة عامة', products: 'إدارة العبايات',
         categories: 'إدارة الأقسام (Category CRUD)', models: 'إدارة الموديلات (Model CRUD)',
+        testimonials: 'إدارة آراء العملاء (Testimonials CRUD)',
+        settings: 'إعدادات الهوية والشعار والتواصل',
         add: editingProductId ? 'تعديل عباية' : 'إضافة عباية'
     };
     document.getElementById('breadcrumb-text').textContent = labels[name] || name;
@@ -669,6 +688,8 @@ function showSection(name) {
     if (name === 'products') renderProductsTable();
     if (name === 'categories') renderCategoriesTable();
     if (name === 'models') renderModelsTable();
+    if (name === 'testimonials') renderTestimonialsTable();
+    if (name === 'settings') populateSettingsForm();
 }
 
 function renderCurrentSection() {
@@ -679,6 +700,7 @@ function renderCurrentSection() {
         if (name === 'products') renderProductsTable();
         if (name === 'categories') renderCategoriesTable();
         if (name === 'models') renderModelsTable();
+        if (name === 'testimonials') renderTestimonialsTable();
     }
 }
 
@@ -954,7 +976,7 @@ async function confirmDelete() {
     const type = deleteTargetType;
     closeDeleteModal();
 
-    const endpoints = { product: 'products.php', category: 'categories.php', model: 'models.php' };
+    const endpoints = { product: 'products.php', category: 'categories.php', model: 'models.php', testimonial: 'testimonials.php' };
 
     try {
         const res  = await fetch(BASE_API_URL + `${endpoints[type]}?action=delete&id=` + id, { method: 'DELETE' });
@@ -964,6 +986,8 @@ async function confirmDelete() {
             if (type === 'product') {
                 allProducts = allProducts.filter(p => p.id !== id);
                 if (editingProductId === id) resetProductForm();
+            } else if (type === 'testimonial') {
+                await loadTestimonials();
             } else {
                 await loadCategoriesAndModels();
             }
@@ -1217,6 +1241,195 @@ window.resetCategoryForm  = resetCategoryForm;
 window.saveModel          = saveModel;
 window.editModel          = editModel;
 window.resetModelForm     = resetModelForm;
+
+/* Testimonials CRUD JS */
+async function loadTestimonials() {
+    try {
+        const res = await fetch(BASE_API_URL + 'testimonials.php');
+        const data = await res.json();
+        testimonialsList = Array.isArray(data) ? data : [];
+    } catch(e) {
+        testimonialsList = [];
+    }
+    renderTestimonialsTable();
+}
+
+function renderTestimonialsTable() {
+    const tbody = document.getElementById('testimonials-table-body');
+    const count = document.getElementById('testi-table-count');
+    const navCount = document.getElementById('nav-testi-count');
+
+    if (count) count.textContent = `${testimonialsList.length} رأي`;
+    if (navCount) navCount.textContent = testimonialsList.length;
+
+    if (!tbody) return;
+    if (testimonialsList.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-brown-muted">لا توجد آراء مسجلة حتى الآن.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = testimonialsList.map((t, idx) => {
+        const stars = '⭐'.repeat(t.rating || 5);
+        return `
+        <tr class="border-b border-gray-50 hover:bg-beige/40">
+            <td class="px-4 py-3 font-mono text-xs text-brown-muted">${idx + 1}</td>
+            <td class="px-4 py-3 font-bold text-brown text-sm">
+                <div>${t.customer_name}</div>
+                <div class="text-[11px] font-normal text-brown-muted">${t.city || ''}</div>
+            </td>
+            <td class="px-4 py-3 text-xs">${stars}</td>
+            <td class="px-4 py-3 text-brown-muted text-xs max-w-xs truncate" title="${(t.content || '').replace(/"/g, '&quot;')}">${t.content || ''}</td>
+            <td class="px-4 py-3 text-center">
+                <div class="flex items-center justify-center gap-2">
+                    <button onclick="editTestimonial(${t.id})" class="px-3 py-1.5 rounded-lg bg-gold/10 text-brown text-xs font-semibold"><i class="fas fa-edit"></i> تعديل</button>
+                    <button onclick="openDeleteModal(${t.id}, '${(t.customer_name || '').replace(/'/g, "\\'")}', 'testimonial')" class="px-3 py-1.5 rounded-lg bg-red-50 text-red-500 text-xs font-semibold"><i class="fas fa-trash"></i> حذف</button>
+                </div>
+            </td>
+        </tr>
+    `;
+    }).join('');
+}
+
+async function saveTestimonial(e) {
+    e.preventDefault();
+    const id       = document.getElementById('testi-id').value;
+    const name     = document.getElementById('testi-name').value.trim();
+    const city     = document.getElementById('testi-city').value.trim();
+    const rating   = parseInt(document.getElementById('testi-rating').value) || 5;
+    const content  = document.getElementById('testi-content').value.trim();
+
+    if (!name || !content) return;
+
+    try {
+        const res = await fetch(BASE_API_URL + 'testimonials.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: id || null, customer_name: name, city, rating, content })
+        });
+        const data = await res.json();
+        if (data.success) {
+            showToast(data.message || 'تم حفظ رأي العميل بنجاح!', 'success');
+            await loadTestimonials();
+            resetTestimonialForm();
+        } else {
+            showToast(data.error || 'تعذر الحفظ', 'error');
+        }
+    } catch(err) {
+        showToast('تعذر الاتصال بالسيرفر', 'error');
+    }
+}
+
+function editTestimonial(id) {
+    const t = testimonialsList.find(x => x.id === id);
+    if (!t) return;
+
+    document.getElementById('testi-id').value      = t.id;
+    document.getElementById('testi-name').value    = t.customer_name;
+    document.getElementById('testi-city').value    = t.city || '';
+    document.getElementById('testi-rating').value  = t.rating || 5;
+    document.getElementById('testi-content').value = t.content;
+
+    document.getElementById('testi-form-title').innerHTML = '<i class="fas fa-edit text-gold"></i> تعديل رأي العميل';
+    document.getElementById('btn-cancel-testi').classList.remove('hidden');
+}
+
+function resetTestimonialForm() {
+    document.getElementById('testi-id').value      = '';
+    document.getElementById('testi-name').value    = '';
+    document.getElementById('testi-city').value    = '';
+    document.getElementById('testi-rating').value  = '5';
+    document.getElementById('testi-content').value = '';
+    document.getElementById('testi-form-title').innerHTML = '<i class="fas fa-comment-dots text-gold"></i> إضافة رأي عميل جديد';
+    document.getElementById('btn-cancel-testi').classList.add('hidden');
+}
+
+window.loadTestimonials     = loadTestimonials;
+window.saveTestimonial      = saveTestimonial;
+window.editTestimonial      = editTestimonial;
+window.resetTestimonialForm = resetTestimonialForm;
+
+/* Site Settings & Logo JS */
+let siteSettingsData = {};
+
+async function loadSiteSettings() {
+    try {
+        const res = await fetch(BASE_API_URL + 'settings.php');
+        siteSettingsData = await res.json();
+        populateSettingsForm();
+    } catch(e) {
+        console.error('Failed to load settings:', e);
+    }
+}
+
+function populateSettingsForm() {
+    if (!siteSettingsData) return;
+    if (document.getElementById('setting-whatsapp-number')) {
+        document.getElementById('setting-whatsapp-number').value = siteSettingsData.whatsapp_number || '';
+        document.getElementById('setting-phone-number').value    = siteSettingsData.phone_number || '';
+        document.getElementById('setting-instagram-url').value    = siteSettingsData.instagram_url || '';
+        document.getElementById('setting-facebook-url').value     = siteSettingsData.facebook_url || '';
+        document.getElementById('setting-tiktok-url').value       = siteSettingsData.tiktok_url || '';
+        document.getElementById('setting-snapchat-url').value     = siteSettingsData.snapchat_url || '';
+        document.getElementById('setting-address-text').value     = siteSettingsData.address_text || '';
+        document.getElementById('setting-work-hours').value       = siteSettingsData.work_hours || '';
+        document.getElementById('setting-site-logo').value        = siteSettingsData.site_logo || '';
+    }
+    const preview = document.getElementById('setting-logo-preview');
+    if (preview && siteSettingsData.site_logo) {
+        const logoUrl = siteSettingsData.site_logo.startsWith('http') ? siteSettingsData.site_logo : ('../' + siteSettingsData.site_logo);
+        preview.src = logoUrl;
+    }
+}
+
+function previewLogoFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const preview = document.getElementById('setting-logo-preview');
+        if (preview) preview.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+
+async function saveSiteSettings(e) {
+    if (e) e.preventDefault();
+    
+    const formData = new FormData();
+    const logoFileInput = document.getElementById('setting-logo-file');
+    if (logoFileInput && logoFileInput.files[0]) {
+        formData.append('logo_file', logoFileInput.files[0]);
+    }
+    
+    formData.append('whatsapp_number', document.getElementById('setting-whatsapp-number').value.trim());
+    formData.append('phone_number',    document.getElementById('setting-phone-number').value.trim());
+    formData.append('instagram_url',   document.getElementById('setting-instagram-url').value.trim());
+    formData.append('facebook_url',    document.getElementById('setting-facebook-url').value.trim());
+    formData.append('tiktok_url',      document.getElementById('setting-tiktok-url').value.trim());
+    formData.append('snapchat_url',    document.getElementById('setting-snapchat-url').value.trim());
+    formData.append('address_text',    document.getElementById('setting-address-text').value.trim());
+    formData.append('work_hours',      document.getElementById('setting-work-hours').value.trim());
+    
+    try {
+        const res = await fetch(BASE_API_URL + 'settings.php', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+            showToast(data.message || 'تم حفظ إعدادات الهوية والتواصل بنجاح! 🌿', 'success');
+            await loadSiteSettings();
+        } else {
+            showToast(data.error || 'تعذر حفظ الإعدادات', 'error');
+        }
+    } catch(err) {
+        showToast('تعذر الاتصال بالسيرفر لحفظ الإعدادات', 'error');
+    }
+}
+
+window.loadSiteSettings = loadSiteSettings;
+window.saveSiteSettings = saveSiteSettings;
+window.previewLogoFile  = previewLogoFile;
 </script>
 
 </body>

@@ -12,14 +12,14 @@
         right: -100%;
         width: 280px;
         height: 100vh;
-        background-color: var(--color-dark-brown);
+        background: var(--gradient-dark);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 30px;
         transition: right 0.4s ease;
         z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.25);
+        box-shadow: -5px 0 30px rgba(45, 24, 40, 0.4);
     }
     
     .nav-links.active {
@@ -27,17 +27,23 @@
     }
     
     .nav-links li a {
-        color: var(--color-white);
+        color: rgba(253, 232, 239, 0.90);
         font-size: 1.2rem;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li.active a {
+        color: var(--color-gold-real);
     }
     
     .menu-toggle {
         display: flex !important;
-        color: var(--color-gold);
+        color: var(--color-primary);
+        font-size: 1.4rem;
     }
     
     .hero-slider {
-        height: 450px;
+        height: 480px;
     }
     
     .hero-content h1 {
@@ -48,7 +54,13 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
     }
-    
+
+    /* about */
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* footer */
     .footer-content {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
@@ -62,6 +74,12 @@
     .product-gallery {
         max-height: 400px;
     }
+
+    /* stats bar */
+    .testimonials-stats {
+        max-width: 95%;
+        padding: 20px 24px;
+    }
 }
 
 /* للهواتف الذكية (أصغر من 576px) */
@@ -73,31 +91,53 @@
     .top-bar {
         justify-content: center;
         font-size: 0.8rem;
+        padding: 8px 4%;
     }
     
     .hero-slider {
-        height: 350px;
+        height: 400px;
     }
     
+    .hero-content {
+        padding: 0 5%;
+    }
+
     .hero-content h1 {
         font-size: 1.8rem;
+        line-height: 1.25;
     }
     
     .hero-content p {
         font-size: 0.9rem;
         margin-bottom: 20px;
     }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+    }
     
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        gap: 12px;
     }
     
     .section-title {
         font-size: 1.6rem;
         margin-bottom: 30px;
     }
-    
+
+    .section {
+        padding: 60px 4%;
+    }
+
+    /* footer */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -107,6 +147,7 @@
     .footer-section h3::after {
         left: 50%;
         transform: translateX(-50%);
+        right: auto;
     }
     
     .contact-wrapper {
@@ -126,8 +167,9 @@
     .whatsapp-float-btn {
         bottom: 20px;
         right: 20px;
-        padding: 10px 15px;
-        font-size: 0.9rem;
+        width: 50px;
+        height: 50px;
+        padding: 0;
     }
     
     .quick-contact-bar {
@@ -144,5 +186,28 @@
     #qrcode canvas, #qrcode img {
         width: 200px !important;
         height: 200px !important;
+    }
+
+    /* testimonials mobile */
+    .testimonials-section {
+        padding: 60px 4%;
+    }
+
+    .testimonial-text {
+        font-size: 0.92rem;
+    }
+
+    /* product detail */
+    .product-detail-container {
+        padding: 20px;
+        margin: 20px 4%;
+    }
+
+    .product-title-large {
+        font-size: 1.6rem;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
     }
 }

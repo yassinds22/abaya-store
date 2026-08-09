@@ -42,7 +42,7 @@ $extraScripts = <<<JS
         text: siteUrl,
         width: 256,
         height: 256,
-        colorDark : "#D4AF37",
+        colorDark : "#C5A059",
         colorLight : "#FFFFFF",
         correctLevel : QRCode.CorrectLevel.H
     });
@@ -69,7 +69,7 @@ $extraScripts = <<<JS
             ctx.fillStyle = "#FFFFFF";
             ctx.fill();
             ctx.lineWidth = 2;
-            ctx.strokeStyle = "#D4AF37";
+            ctx.strokeStyle = "#C5A059";
             ctx.stroke();
             ctx.drawImage(logoImg, x, y, logoSize, logoSize);
             const dataUrl = tempCanvas.toDataURL("image/png");

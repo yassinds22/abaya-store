@@ -6,10 +6,11 @@
                 <p class="footer-about-text">
                     علامة تجارية متخصصة في تصميم وبيع العبايات الخليجية والملكية الراقية. نتميز باستخدام أجود أنواع الأقمشة والتطريز اليدوي الدقيق الذي يمنحكِ حضوراً ملكياً في كل مناسبة.
                 </p>
-                <div class="social-links-row">
-                    <a href="https://instagram.com" target="_blank" class="social-icon-btn social-instagram" aria-label="انستغرام لارين عباية"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com"  target="_blank" class="social-icon-btn social-facebook"  aria-label="فيسبوك لارين عباية"><i class="fab fa-facebook"></i></a>
-                    <a href="https://tiktok.com"    target="_blank" class="social-icon-btn social-tiktok"    aria-label="تيك توك لارين عباية"><i class="fab fa-tiktok"></i></a>
+                <div class="social-links-row" id="footer-social-links">
+                    <a href="https://instagram.com" id="footer-instagram-link" target="_blank" class="social-icon-btn social-instagram" aria-label="انستغرام لارين عباية"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com"  id="footer-facebook-link"  target="_blank" class="social-icon-btn social-facebook"  aria-label="فيسبوك لارين عباية"><i class="fab fa-facebook"></i></a>
+                    <a href="https://tiktok.com"    id="footer-tiktok-link"    target="_blank" class="social-icon-btn social-tiktok"    aria-label="تيك توك لارين عباية"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://snapchat.com"  id="footer-snapchat-link"  target="_blank" class="social-icon-btn social-snapchat"  aria-label="سناب شات لارين عباية"><i class="fab fa-snapchat-ghost"></i></a>
                 </div>
             </div>
 
@@ -29,15 +30,15 @@
                 <ul class="footer-contact-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>صنعاء - سوق شميلة - شارع 2 - جوار العلوي للعبايات</span>
+                        <span id="footer-address-text">صنعاء - سوق شميلة - شارع 2 - جوار العلوي للعبايات</span>
                     </li>
                     <li>
                         <i class="fas fa-phone-alt"></i>
-                        <span>773185534</span>
+                        <span id="footer-phone-text">773185534</span>
                     </li>
                     <li>
                         <i class="fas fa-clock"></i>
-                        <span>السبت - الخميس: 9:00 صباحاً - 9:30 مساءً<br>الجمعة: 4:00 عصراً - 9:30 مساءً</span>
+                        <span id="footer-hours-text">السبت - الخميس: 9:00 صباحاً - 9:30 مساءً<br>الجمعة: 4:00 عصراً - 9:30 مساءً</span>
                     </li>
                 </ul>
             </div>
@@ -54,6 +55,7 @@
     <script src="<?= BASE_URL ?>assets/js/products.js"></script>
     <script src="<?= BASE_URL ?>assets/js/admin.js"></script>
     <script src="<?= BASE_URL ?>assets/js/main.js"></script>
+    <script src="<?= BASE_URL ?>assets/js/effects.js"></script>
     <?php if (!empty($extraScripts)) echo $extraScripts; ?>
 
 </body>

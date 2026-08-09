@@ -49,9 +49,9 @@
 .shimmer-pink {
     background: linear-gradient(
         90deg,
-        rgba(181, 67, 106, 0.06) 0%,
-        rgba(196, 136, 154, 0.18) 50%,
-        rgba(181, 67, 106, 0.06) 100%
+        rgba(11, 79, 58, 0.06) 0%,
+        rgba(197, 160, 89, 0.18) 50%,
+        rgba(11, 79, 58, 0.06) 100%
     );
     background-size: 800px 100%;
     animation: shimmerPink 2.2s infinite linear;
@@ -62,10 +62,10 @@
 ======================================== */
 @keyframes pinkPulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(181, 67, 106, 0.35);
+        box-shadow: 0 0 0 0 rgba(11, 79, 58, 0.35);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(181, 67, 106, 0);
+        box-shadow: 0 0 0 12px rgba(11, 79, 58, 0);
     }
 }
 
@@ -125,7 +125,7 @@
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(181, 67, 106, 0.18);
+    box-shadow: 0 20px 45px rgba(11, 79, 58, 0.18);
 }
 
 /* ========================================
@@ -222,7 +222,7 @@
 }
 
 .animated-gradient {
-    background: linear-gradient(270deg, #B5436A, #7B3B7A, #C4889A, #B5436A);
+    background: linear-gradient(270deg, #0B4F3A, #1B362B, #C5A059, #0B4F3A);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     -webkit-background-clip: text;

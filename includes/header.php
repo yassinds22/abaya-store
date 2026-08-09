@@ -55,10 +55,10 @@ function navClass(string $page, string $current): string {
             <span>🌿</span>
             <p>تشكيلة جديدة مميزة كل خميس - تابعينا ليصلكِم كل جديد</p>
         </div>
-        <div class="top-bar-info">
-            <span><i class="fab fa-instagram"></i> 18K متابعة</span>
-            <span><i class="fab fa-facebook"></i> 12K متابعة</span>
-            <span><i class="fas fa-map-marker-alt"></i> صنعاء - شميلة</span>
+        <div class="top-bar-info" id="top-bar-info-container">
+            <a href="https://instagram.com" id="top-instagram-link" target="_blank" style="color:inherit;"><i class="fab fa-instagram"></i> انستغرام</a>
+            <a href="https://facebook.com" id="top-facebook-link" target="_blank" style="color:inherit;"><i class="fab fa-facebook"></i> فيسبوك</a>
+            <span id="top-address-text"><i class="fas fa-map-marker-alt"></i> صنعاء - شميلة</span>
         </div>
     </div>
 
@@ -66,8 +66,8 @@ function navClass(string $page, string $current): string {
     <header class="main-header" id="main-navigation-header">
         <div class="logo-container">
             <a href="<?= BASE_URL ?>index.php">
-                <img src="<?= BASE_URL ?>assets/images/logo.png" alt="شعار لارين عباية" class="logo"
-                     onerror="this.src='https://placehold.co/200x80/2c1810/d4af37?text=Lareen+Abaya'">
+                <img id="site-header-logo" src="<?= BASE_URL ?>assets/images/logo.png" alt="شعار لارين عباية" class="logo"
+                     onerror="this.src='https://placehold.co/200x80/0b4f3a/c5a059?text=Lareen+Abaya'">
             </a>
         </div>
 
